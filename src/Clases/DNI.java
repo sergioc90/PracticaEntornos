@@ -19,7 +19,7 @@ public class DNI {
         }
     }
     
-    public void controlTamaño(String cadena) throws ErrorDNIException{
+    private void controlTamaño(String cadena) throws ErrorDNIException{
         if(cadena.length()==9){
             System.out.println("La cadena tiene 9 caracteres");
         }else if (cadena.length()<9){
@@ -30,7 +30,7 @@ public class DNI {
         
     }
     
-    public void todoDigitos(String cadena) throws ErrorDNIException{
+    private void todoDigitos(String cadena) throws ErrorDNIException{
         String numero=cadena.substring(0, 8);
         for(int i=0;i<numero.length();i++){
             if(Character.isDigit(numero.charAt(i))){
@@ -46,7 +46,7 @@ public class DNI {
         }
     }
     
-    public String tieneLetra(String cadena) throws ErrorDNIException{
+    private String tieneLetra(String cadena) throws ErrorDNIException{
         char letra=cadena.charAt(8);
         if(Character.isAlphabetic(letra)){
             System.out.println("Es una letra: "+Character.toUpperCase(letra));
@@ -56,7 +56,7 @@ public class DNI {
         }
     }
     
-    public void letraCorrecta(String cadena) throws ErrorDNIException{
+    private void letraCorrecta(String cadena) throws ErrorDNIException{
         String letracorres="TRWAGMYFPDXBNJZSQVHLCKE";
         char letra=cadena.charAt(8);
         int numero=Integer.parseInt(cadena.substring(0, 8));
